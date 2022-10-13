@@ -10,8 +10,11 @@ from sklearn.metrics import classification_report
 from sklearn.metrics import roc_auc_score
 # Undersampling the normal transactions data
 from imblearn.under_sampling import RandomUnderSampler
+from flask_cors import CORS, cross_origin
 
 app = Flask(__name__)
+CORS(app, resources={r"/*": {"origins": "*"}})
+app.config['CORS_HEADERS'] = 'Content-Type'
 
 #transactions_data = pd.read_csv('app\PS_20174392719_1491204439457_log.csv')
 
@@ -82,6 +85,7 @@ def hello_world():
     return "<p>Hello, World!</p>"
 
 @app.route('/transaccionesbancariasatipicas', methods=['GET', 'POST'])
+@cross_origin(origin='*',headers=['Content-Type','Authorization'])
 def transaccionesbancariasatipicas():
     # If a form is submitted
     
@@ -95,7 +99,7 @@ def transaccionesbancariasatipicas():
     print('variable de predicciones')
     print(prediction)
     #return render_template("transaccionesbancariasatipicas.html", output = prediction)
-    return jsonify(prediction).headers.add('Access-Control-Allow-Origin', '*')
+    return jsonify(prediction)
 
 # Running the app
 if __name__ == '__main__':
