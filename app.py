@@ -95,7 +95,7 @@ def transaccionesbancariasatipicas():
     print('variable de predicciones')
     print(prediction)
     #return render_template("transaccionesbancariasatipicas.html", output = prediction)
-    return jsonify(prediction)
+    return jsonify(prediction).headers.add('Access-Control-Allow-Origin', '*')
 
 # Running the app
 if __name__ == '__main__':
