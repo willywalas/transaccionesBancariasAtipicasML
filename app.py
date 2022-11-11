@@ -18,7 +18,8 @@ app.config['CORS_HEADERS'] = 'Content-Type'
 
 #transactions_data = pd.read_csv('app\PS_20174392719_1491204439457_log.csv')
 
-transactions_data = pd.read_csv('https://transaccionesbancarias.blob.core.windows.net/databanca/datatransaccionesbancariasbackup.csv')
+#transactions_data = pd.read_csv('https://transaccionesbancarias.blob.core.windows.net/databanca/datatransaccionesbancariasbackup.csv')
+transactions_data = pd.read_csv('https://databanca.blob.core.windows.net/databanca/datatransaccionesbancarias.csv')
 
 # Removing the null values
 transactions_data = transactions_data.dropna()
