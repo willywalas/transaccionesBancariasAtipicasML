@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'modelotransaccionesatipicas'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_D2F7F7FC9D7D4721A8B7D8799322498D }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_E610CF49801A4711B5818FA0BF9857E3 }}
